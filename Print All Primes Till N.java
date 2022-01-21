@@ -1,31 +1,27 @@
 import java.util.*;
-class Main{
-    
-    public static void main(String[] args){
-        
+
+public class Main{
+    public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         int low = scn.nextInt();
         int high = scn.nextInt();
         
-        for(int number = low ; number <= high ; number+=1){
-            boolean isPrime = true;
-            for(int divide=2 ; divide<=number-1 ; divide++){
-                
-                if(number%divide == 0){
-                    isPrime = false;
-                    
-                }
-                
-             }
+        for( int n = low ; n <=high; n++){
+            int count = 0;
             
-             if(isPrime == true){
-                 System.out.println(number);
+            
+        for(int div = 2; div*div <=n; div++){
+            if(n % div ==0){
+                count++;
+                break;
             }
+        }    
+        
+            if(count == 0){
+            System.out.println(n);
             
-         }   
+            }
+        }    
+        
     }
-    
-}
-                    
-                
-                
+}  
